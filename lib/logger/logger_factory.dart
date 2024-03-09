@@ -1,7 +1,12 @@
+import 'package:expense_tracker/logger/custom_logger_printer.dart';
 import 'package:logger/logger.dart';
 
 class LoggerFactory {
   static Logger getLogger() {
-    return Logger(printer: PrettyPrinter(colors: true, methodCount: 0));
+    return Logger(
+      printer: CustomLoggerPrinter(
+        PrettyPrinter(colors: false, methodCount: 0),
+      ),
+    );
   }
 }
