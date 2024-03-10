@@ -33,10 +33,10 @@ class Expense {
 
   @override
   String toString() {
-    return '[Expense]::id <= [$id]¥n'
-        'title <=: [$title]¥n'
-        'amount <=: [$amount]¥n'
-        'date <=: [$date]¥n'
-        'category <=: [$category]¥n';
+    return '[Expense]::id <= [$id], '
+        'title <=: [$title], '
+        'amount <=: [$amount], '
+        'date <=: [$date], '
+        'category <=: [$category]';
   }
 }
