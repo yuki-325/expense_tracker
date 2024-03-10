@@ -32,7 +32,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 48, 16, 16),
       child: Column(
         children: [
           TextField(
@@ -152,7 +152,7 @@ class _NewExpenseState extends State<NewExpense> {
     }
     widget.onAddExpense(Expense(
         amount: double.parse(_amountController.text),
-        title: _titleController.text.trim(),
+        title: _titleController.text,
         category: _selectedCategory,
         date: _selectedDate!));
     Navigator.pop(context);
