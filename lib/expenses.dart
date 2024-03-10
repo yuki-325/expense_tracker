@@ -1,7 +1,9 @@
+import 'package:expense_tracker/logger/logger_factory.dart';
+import 'package:expense_tracker/models/expense.dart';
 import 'package:expense_tracker/new_expense.dart';
 import 'package:expense_tracker/widget/expenses_list/expenses_list.dart';
-import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -11,6 +13,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
+  final Logger _logger = LoggerFactory.getLogger();
   final List<Expense> _registeredExpenses = [
     Expense(
       title: 'Flutter Course',
@@ -52,7 +55,16 @@ class _ExpensesState extends State<Expenses> {
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
       context: context,
-      builder: (context) => const NewExpense(),
+      builder: (context) => NewExpense(onAddExpense: _addExpense),
     );
+  }
+
+  void _addExpense(Expense e) {
+    _logger.i("begin");
+    setState(() {
+      _logger.d('expense <=: $e');
+      _registeredExpenses.add(e);
+    });
+    _logger.i("end");
   }
 }

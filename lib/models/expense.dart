@@ -30,4 +30,13 @@ class Expense {
     required this.date,
     required this.category,
   }) : id = uuid.v4();
+
+  @override
+  String toString() {
+    return '[Expense]::id <= [$id]¥n'
+        'title <=: [$title]¥n'
+        'amount <=: [$amount]¥n'
+        'date <=: [$date]¥n'
+        'category <=: [$category]¥n';
+  }
 }
