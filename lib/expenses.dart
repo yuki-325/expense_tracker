@@ -85,6 +85,8 @@ class _ExpensesState extends State<Expenses> {
       _logger.d("dismiss expense <=: $e");
       _registeredExpenses.remove(e);
     });
+    ScaffoldMessenger.of(context)
+        .clearSnackBars(); // 連続削除された時のためにスナックバーを一旦クリアする
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: const Duration(seconds: 3),
