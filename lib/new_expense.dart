@@ -149,6 +149,7 @@ class _NewExpenseState extends State<NewExpense> {
           ],
         ),
       );
+      return;
     }
     widget.onAddExpense(Expense(
         amount: double.parse(_amountController.text),
