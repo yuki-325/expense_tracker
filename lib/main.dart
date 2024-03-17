@@ -3,12 +3,7 @@ import 'package:expense_tracker/logger/logger_factory.dart';
 import 'package:flutter/material.dart';
 
 ColorScheme kColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(
-    225,
-    96,
-    59,
-    181,
-  ),
+  seedColor: const Color.fromARGB(255, 2, 163, 158),
 );
 
 void main() {
@@ -33,9 +28,9 @@ void main() {
         ),
         textTheme: ThemeData().textTheme.copyWith(
               titleLarge: TextStyle(
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.bold,
                 color: kColorScheme.onSecondaryContainer,
-                fontSize: 14,
+                fontSize: 16,
               ),
             ),
       ),
