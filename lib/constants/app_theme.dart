@@ -13,7 +13,6 @@ class AppTheme {
   );
 
   static final baseTheme = ThemeData().copyWith(
-    useMaterial3: true,
     colorScheme: _lightColorScheme,
     appBarTheme: const AppBarTheme().copyWith(
       backgroundColor: _lightColorScheme.onPrimaryContainer,
@@ -37,7 +36,6 @@ class AppTheme {
   );
 
   static final darkTheme = ThemeData.dark().copyWith(
-    useMaterial3: true,
     colorScheme: _darkColorScheme,
     cardTheme: baseTheme.cardTheme.copyWith(
       color: _darkColorScheme.secondaryContainer,
