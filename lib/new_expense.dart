@@ -113,7 +113,7 @@ class _NewExpenseState extends State<NewExpense> {
   Future<void> _presentDatePicker() async {
     final now = DateTime.now();
     final firstDate = now.subtract(
-      const Duration(days: DateTimeUtils.YEAR_DAYS),
+      const Duration(days: DateTimeUtils.yearDays),
     );
     final pickerDate = await showDatePicker(
       context: context,
