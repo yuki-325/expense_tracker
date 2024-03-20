@@ -36,27 +36,17 @@ class AppTheme {
         ),
   );
 
-  static final darkTheme = baseTheme.copyWith(
+  static final darkTheme = ThemeData.dark().copyWith(
     useMaterial3: true,
     colorScheme: _darkColorScheme,
-    appBarTheme: const AppBarTheme().copyWith(
-      backgroundColor: _darkColorScheme.onPrimaryContainer,
-      foregroundColor: _darkColorScheme.primaryContainer,
-    ),
-    cardTheme: const CardTheme().copyWith(
+    cardTheme: baseTheme.cardTheme.copyWith(
       color: _darkColorScheme.secondaryContainer,
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-          backgroundColor: _darkColorScheme.primaryContainer),
+        backgroundColor: _darkColorScheme.primaryContainer,
+        foregroundColor: _darkColorScheme.onPrimaryContainer,
+      ),
     ),
-    textTheme: ThemeData().textTheme.copyWith(
-          titleLarge: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: _darkColorScheme.onSecondaryContainer,
-            fontSize: 16,
-          ),
-        ),
   );
 }
