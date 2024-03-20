@@ -9,6 +9,11 @@ class ExpenseBucket {
     required this.expenses,
   });
 
+  ExpenseBucket.forCategory(List<Expense> allExpenses, this.category)
+      : expenses = allExpenses
+            .where((element) => element.category == category)
+            .toList();
+
   double get totalExpenses => expenses.fold(
       0.0, (previousValue, element) => previousValue + element.amount);
 }
